@@ -1,0 +1,145 @@
+:root {
+  font-family: sans-serif;
+  --border-rad: 0.5rem;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-content: center;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 5rem;
+}
+
+.progress-bar,
+.cards {
+  background-color: transparent;
+  border: 0.1rem #333 solid;
+  border-radius: var(--border-rad);
+  padding: 2px;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.progress-bar {
+  position: relative;
+  height: 1.5rem;
+  justify-content: space-between;
+}
+
+.progress-indicator {
+  position: relative;
+  width: 25%;
+  height: 100%;
+  background-color: #bfbfbf;
+  border-radius: var(--border-rad);
+}
+
+.progress-indicator::after {
+  content: attr(data-percent);
+  font-size: 0.6rem;
+
+  position: absolute;
+  top: 50%;
+  right: -1.3rem;
+  transform: translateY(-50%);
+}
+
+.count {
+  color: #000;
+  position: absolute;
+  right: 5px;
+  width: max-content;
+
+  font-size: 0.6rem;
+}
+
+.cards {
+  flex-direction: column;
+  border-radius: var(--border-rad);
+
+  gap: 0.25rem;
+}
+
+.card {
+  display: grid;
+  width: 100%;
+  height: 15rem;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: var(--border-rad);
+
+  place-content: center;
+}
+
+.card-text {
+  text-align: center;
+
+  padding-inline: 5rem;
+}
+
+nav {
+  width: 100%;
+  border-radius: var(--border-rad);
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 0.5rem;
+  padding-block: 0.2rem;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: #7a7a7a;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.svg {
+  color: #7a7a7a;
+}
+
+.icon {
+  height: 0.5rem;
+  aspect-ratio: 1;
+}
+
+.right-icon {
+  transform: rotate(180deg);
+}
+.reveal {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.navigation {
+  font-size: 0.7rem;
+}
+
+/* .progress-filler {
+  border-radius: inherit;
+  padding: 1px;
+
+  height: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: lightblue;
+
+  flex: 1;
+} */

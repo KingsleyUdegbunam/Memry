@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-sale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flash Cards</title>
 
   <link rel="stylesheet" href="reset.css">
@@ -12,30 +12,52 @@
 
 <body>
   <main>
-    <article class="progress">
-      <div class="progress-status"> </div>
-      <div class="count">
+    <section class="main-wrapper">
+      <section class="progress-bar">
+        <div class="progress-indicator" data-percent="25%"></div>
+        <div class="count">
+          5 of 20
+        </div>
+      </section>
 
-      </div>
-    </article>
+      <section class="cards">
+        <article class="card">
+          <div class="card-text">
+            What is the difference between var, let, and const?
+          </div>
+        </article>
+        <nav>
+          <div class="navigation">
+            <div class="left-icon icon">
+              <svg class="svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+            </div>
+            <p class="nav-btn">
+              Previous
+            </p>
+          </div>
 
-    <section class="cards">
-      <article class="card">
-        What is the difference between var, let, and const?
-      </article>
-      <nav>
-        <div class="previous">
-          <p class="navigation">
-            Previous
-          </p>
           <p class="reveal">
             Show Answer
           </p>
-          <p class="navigation">
-            Next
-          </p>
-        </div>
-      </nav>
+
+          <div class="navigation">
+            <p class="nav-btn">
+              Next
+            </p>
+            <div class="right-icon icon">
+              <svg class="svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+
+        </nav>
+      </section>
     </section>
   </main>
 
