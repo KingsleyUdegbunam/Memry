@@ -15,6 +15,9 @@ main {
   flex-direction: column;
   gap: 0.5rem;
   padding: 5rem;
+
+  max-width: 900px;
+  width: 40rem;
 }
 
 .progress-bar,
@@ -110,10 +113,6 @@ img {
   height: 100%;
 }
 
-.svg {
-  color: #7a7a7a;
-}
-
 .icon {
   height: 0.5rem;
   aspect-ratio: 1;
@@ -131,15 +130,11 @@ img {
   font-size: 0.7rem;
 }
 
-/* .progress-filler {
-  border-radius: inherit;
-  padding: 1px;
+.navigation,
+.reveal {
+  cursor: pointer;
+}
 
-  height: inherit;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  background-color: lightblue;
-
-  flex: 1;
-} */
+.navigation:hover {
+  color: black;
+}
