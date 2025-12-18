@@ -3,7 +3,7 @@ export const data = [
     id: 1,
     question: "What is the difference between var, let and const?",
     answer:
-      "In JavaScirpt, var is function-scoped and can be re-declared; let and const are block-scoped, with let allowing re-assignment and const preventing it. However, const objects can have their contents modified.",
+      "In JavaScript, var is function-scoped and can be re-declared; let and const are block-scoped, with let allowing re-assignment and const preventing it. However, const objects can have their contents modified.",
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ export const data = [
   {
     id: 7,
     question: "What is the purpose of <label> in forms?",
-    answer: "Improves accessibility and links text to form inputs.",
+    answer: "To improve accessibility and links text to form inputs.",
   },
   {
     id: 8,
