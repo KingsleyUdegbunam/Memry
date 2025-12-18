@@ -93,7 +93,7 @@ nextElem.addEventListener("click", () => {
     alertElem.innerHTML = `
     <article class="max-card-alert flashcard-alert">
         <p>
-          You've reached the end. Well done!
+          <span class='off-mobile'>You've reached the end.</span> Well done<span class='on-mobile'> buddy</span>!
         </p>
 
         <svg class="minmax-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
@@ -186,7 +186,7 @@ previousElem.addEventListener("click", () => {
     alertElem.innerHTML = `
       <article class="min-card-alert flashcard-alert">
         <p>
-          Can't go any lower buddy!
+          <span class='off-mobile'>Can't go any lower</span><span class='on-mobile'>Endpoint</span> buddy!
         </p>
 
         <svg class="minmax-icon warning-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
