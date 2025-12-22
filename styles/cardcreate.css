@@ -1,0 +1,50 @@
+section {
+  height: 100vh;
+  display: grid;
+
+  place-content: center;
+}
+
+.card {
+  background-color: aliceblue;
+  width: 400px;
+  display: grid;
+  gap: 1rem;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  overflow: hidden;
+  line-height: 1.4;
+  height: auto;
+  padding: 2rem 2.2rem;
+}
+
+.btns {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.default {
+  display: grid;
+  place-content: center;
+}
+
+.create-btn {
+  width: 7.5rem;
+  font-size: 0.9rem;
+}
+
+.btn-text {
+  text-align: center;
+  padding: 0.5em 1.5em;
+}
+
+.add-another {
+  display: none;
+  text-align: center;
+  border-radius: 0.3rem;
+  border-width: 1.5px;
+}
