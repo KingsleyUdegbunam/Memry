@@ -1,0 +1,11 @@
+.set-btn {
+  width: 12rem;
+  display: grid;
+  place-content: center;
+
+  padding: 0.6rem 1.8rem;
+}
+
+.landing-wrapper {
+  gap: 1.5rem;
+}
