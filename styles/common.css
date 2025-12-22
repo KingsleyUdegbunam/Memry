@@ -1,0 +1,65 @@
+:root {
+  font-family: sans-serif;
+
+  --BG-CLR: aliceblue;
+  --border-rad: 0.5rem;
+  --min-card-alert-clr: #9e1200;
+  --max-card-alert-clr: rgb(1, 82, 1);
+  --nav-bg-clr: #f5f5f5;
+
+  --max-card-alert-bg: palegreen;
+  --min-card-alert-bg: rgb(255, 112, 122);
+
+  --progress-bar-clr: #01d801;
+  --card-question-clr: #fff7bc;
+
+  --border-clr: #333;
+  --landing-btn-hover: #535353;
+
+  --count-color: #bfbfbf;
+}
+
+a {
+  text-decoration: none;
+  color: var(--border-clr);
+  cursor: pointer;
+}
+
+.logo {
+  position: absolute;
+  font-size: 1.2rem;
+  left: 3rem;
+  transform: translateX(-50%);
+  top: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button {
+  background-color: var(--border-clr);
+  text-decoration: none;
+  color: var(--BG-CLR);
+  width: max-content;
+  padding: 0.5em 1.5em;
+  border-radius: 0.25rem;
+  cursor: pointer;
+
+  font-size: 0.9rem;
+
+  transition: background-color, 300ms;
+}
+
+.button:hover {
+  background-color: var(--landing-btn-hover);
+}
+
+.default {
+  background-color: var(--BG-CLR);
+  color: var(--border-clr);
+  border: 2px var(--border-clr) solid;
+  transition: background-color, 300ms;
+}
+
+.default:hover {
+  background-color: rgb(213, 223, 232);
+}
