@@ -1,4 +1,7 @@
-import { data } from "./data.js";
+import { defaultData } from "./data.js";
+import { userFlashcards } from "./usercreate/userData.js";
+
+const CurrentData = userFlashcards.length > 0 ? userFlashcards : defaultData;
 
 const flipElem = document.querySelector(".reveal");
 const revealArea = document.querySelector(".card-text");
@@ -23,19 +26,16 @@ flipSound.src = "assets/sounds/flipcard.mp3";
 
 let param = progressIndicatorElem.dataset.percent;
 console.log(param);
-progressIndicatorElem.dataset.percent = "34%";
 
-const arrayLength = data.length;
-const maxIndex = data.length - 1;
+const arrayLength = CurrentData.length;
+const maxIndex = CurrentData.length - 1;
 
-console.log(arrayLength);
-
-revealArea.textContent = data[0].question;
+revealArea.textContent = CurrentData[0].question;
 
 let cardIndex = 0;
 let flipping = 0;
 
-let currentCard = data[cardIndex].id;
+let currentCard = CurrentData[cardIndex].id;
 console.log(currentCard);
 
 totalCardsElem.textContent = arrayLength;
@@ -44,12 +44,12 @@ updateCard();
 updateProgressBar();
 
 function updateCard() {
-  currentCard = data[cardIndex].id;
+  currentCard = CurrentData[cardIndex].id;
   currentCardElem.textContent = currentCard;
 }
 
 function updateProgressBar() {
-  const progress = (data[cardIndex].id / arrayLength) * 100;
+  const progress = (CurrentData[cardIndex].id / arrayLength) * 100;
   progressIndicatorElem.style.width = `${progress}%`;
   progressIndicatorElem.dataset.percent = `${Math.round(progress)}%`;
   console.log(progress, arrayLength, cardIndex);
@@ -67,8 +67,6 @@ flipElem.addEventListener("click", () => {
     flipping = 0;
     flipElem.innerHTML = "Show Answer";
   }
-
-  console.log(flipping);
 });
 
 nextElem.addEventListener("click", () => {
@@ -172,11 +170,10 @@ nextElem.addEventListener("click", () => {
 
       </article>
     `;
+
     maxSound.play();
     alertElem.classList.add("display-alert");
   }
-
-  console.log(cardIndex);
 });
 
 previousElem.addEventListener("click", () => {
@@ -219,16 +216,14 @@ previousElem.addEventListener("click", () => {
     flipping = 0;
     flipElem.innerHTML = "Show Answer";
   }
-
-  console.log(cardIndex);
 });
 
 function renderDisplay(value) {
   if (value === "q") {
-    revealArea.textContent = data[cardIndex].question;
+    revealArea.textContent = CurrentData[cardIndex].question;
     cardBgElem.style.backgroundColor = "#fff7bc";
   } else if (value === "a") {
-    revealArea.textContent = data[cardIndex].answer;
+    revealArea.textContent = CurrentData[cardIndex].answer;
     cardBgElem.style.backgroundColor = "#bcffbc";
   }
 }
