@@ -1,18 +1,15 @@
-import { userFlashcards } from "./userData.js";
+import { userData } from "./userData.js";
 import * as storage from "./utility.js";
 
 const cardElem = document.querySelector(".flashcard-field");
 const textareaQuestionBg = "#fff7bc";
 const textareaAnswerBg = "#bcffbc";
 
-let cardId = storage.get("cardId") || 1;
-let cardIndex = storage.get("cardIndex") || 0;
-
 function renderHTML() {
   cardElem.innerHTML = `
-<article data-card-number="${cardId}" class="card">
-        <label class='label' for="question-${cardId}"></label>
-        <textarea class="question" name="question" id="question-${cardId}" rows="1" placeholder="Type question here"></textarea>
+<article data-card-number="${userData.cardId}" class="card">
+        <label class='label' for="question-${userData.cardId}"></label>
+        <textarea class="question" name="question" id="question-${userData.cardId}" rows="1" placeholder="Type question here"></textarea>
         
 
         <article class="btns">
@@ -63,10 +60,10 @@ cardElem.addEventListener("click", (e) => {
     if (!question) return;
 
     const cardDetails = {
-      id: cardId,
+      id: userData.cardId,
       question,
     };
-    userFlashcards.push(cardDetails);
+    userData.flashcards.push(cardDetails);
 
     textareaElem.value = "";
     textareaElem.placeholder = "Type answer here";
@@ -75,29 +72,24 @@ cardElem.addEventListener("click", (e) => {
 
     setTextareaBg();
 
-    console.log(userFlashcards);
+    console.log(userData.flashcards);
   } else if (element.textContent === "Done") {
-    userFlashcards[cardIndex].answer = textareaElem.value.trim();
+    userData.flashcards[userData.cardIndex].answer = textareaElem.value.trim();
 
-    cardIndex += 1;
-    cardId += 1;
-    storage.save("userData", userFlashcards);
-    storage.save("cardIndex", cardIndex);
-    storage.save("cardId", cardId);
-    console.log(userFlashcards);
+    userData.cardIndex += 1;
+    userData.cardId += 1;
+    storage.save("userData", userData);
   }
 
   if (element.classList.contains("add-another")) {
-    userFlashcards[cardIndex].answer = textareaElem.value.trim();
+    userData.flashcards[userData.cardIndex].answer = textareaElem.value.trim();
 
-    console.log(userFlashcards);
+    console.log(userData.flashcards);
 
-    cardIndex += 1;
-    cardId += 1;
+    userData.cardIndex += 1;
+    userData.cardId += 1;
 
-    storage.save("userData", userFlashcards);
-    storage.save("cardIndex", cardIndex);
-    storage.save("cardId", cardId);
+    storage.save("userData", userData);
 
     textareaElem.value = "";
     textareaElem.placeholder = "Type question here";
@@ -106,7 +98,7 @@ cardElem.addEventListener("click", (e) => {
     setTextareaBg();
     primaryBtn.textContent = "Continue";
 
-    console.log(userFlashcards);
+    console.log(userData.flashcards);
   }
 });
 

@@ -1,7 +1,8 @@
 import { defaultData } from "./data.js";
-import { userFlashcards } from "./usercreate/userData.js";
+import { userData } from "./usercreate/userData.js";
 
-const CurrentData = userFlashcards.length > 0 ? userFlashcards : defaultData;
+const CurrentData =
+  userData.flashcards.length > 0 ? userData.flashcards : defaultData;
 
 const flipElem = document.querySelector(".reveal");
 const revealArea = document.querySelector(".card-text");
