@@ -1,4 +1,4 @@
-export const data = [
+export const defaultData = [
   {
     id: 1,
     question: "What is the difference between var, let and const?",
