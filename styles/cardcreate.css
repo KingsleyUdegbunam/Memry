@@ -6,7 +6,6 @@ section {
 }
 
 .card {
-  background-color: aliceblue;
   width: 400px;
   display: grid;
   gap: 1rem;
@@ -18,13 +17,14 @@ textarea {
   overflow: hidden;
   line-height: 1.4;
   height: auto;
-  padding: 2rem 2.2rem;
+  padding: 1.5rem 2rem;
 }
 
 .btns {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+  align-items: center;
 }
 
 .default {
@@ -32,9 +32,11 @@ textarea {
   place-content: center;
 }
 
-.create-btn {
-  width: 7.5rem;
-  font-size: 0.9rem;
+.add-another {
+  display: none;
+  text-align: center;
+  border-radius: 0.3rem;
+  border-width: 1.5px;
 }
 
 .btn-text {
@@ -42,9 +44,25 @@ textarea {
   padding: 0.5em 1.5em;
 }
 
-.add-another {
-  display: none;
-  text-align: center;
-  border-radius: 0.3rem;
-  border-width: 1.5px;
+.create-btn {
+  width: 7.5rem;
+  font-size: 0.9rem;
+  padding-block: 0.7rem;
+  padding-inline: 1rem;
+}
+
+@media screen and (max-width: 450px) {
+  .card {
+    width: 350px;
+    display: grid;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .card {
+    width: 280px;
+    display: grid;
+    gap: 1rem;
+  }
 }

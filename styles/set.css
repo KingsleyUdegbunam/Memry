@@ -7,5 +7,31 @@
 }
 
 .landing-wrapper {
-  gap: 1.5rem;
+  gap: 1rem;
+}
+
+.reset {
+  border-color: var(--reset-base-color);
+  background-color: var(--reset-base-color);
+}
+
+.reset:hover {
+  background-color: var(--reset-btn-hover);
+  border-color: var(--reset-btn-hover);
+}
+
+.link {
+  color: var(--progress-bar-clr);
+}
+
+.inactive {
+  background-color: var(--reset-inactive);
+  border-color: var(--reset-inactive);
+  color: rgb(255, 255, 255);
+  cursor: default;
+}
+
+.inactive:hover {
+  background-color: var(--reset-inactive);
+  border-color: var(--reset-inactive);
 }

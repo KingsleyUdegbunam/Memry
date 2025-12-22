@@ -1,3 +1,7 @@
+body {
+  position: relative;
+}
+
 main {
   position: relative;
   background-color: var(--BG-CLR);
@@ -181,6 +185,10 @@ img {
 
 .on-mobile {
   display: none;
+}
+
+.link {
+  color: var(--min-card-alert-bg);
 }
 
 /* 656px */

@@ -10,13 +10,23 @@
   --max-card-alert-bg: palegreen;
   --min-card-alert-bg: rgb(255, 112, 122);
 
+  --reset-base-color: rgb(187, 38, 48);
+  --reset-btn-hover: rgb(255, 0, 17);
+  --reset-inactive: rgb(226, 177, 180);
+
   --progress-bar-clr: #01d801;
   --card-question-clr: #fff7bc;
 
   --border-clr: #333;
-  --landing-btn-hover: #535353;
+  --primary-btn-hover: rgb(14, 14, 14);
+  --primary-btn-color: rgb(53, 56, 58);
 
   --count-color: #bfbfbf;
+}
+
+body {
+  background-color: var(--BG-CLR);
+  color: var(--border-clr);
 }
 
 a {
@@ -36,11 +46,12 @@ a {
 }
 
 .button {
-  background-color: var(--border-clr);
+  background-color: var(--primary-btn-color);
   text-decoration: none;
   color: var(--BG-CLR);
   width: max-content;
   padding: 0.5em 1.5em;
+  border: 1.5px solid var(--primary-btn-color);
   border-radius: 0.25rem;
   cursor: pointer;
 
@@ -50,7 +61,8 @@ a {
 }
 
 .button:hover {
-  background-color: var(--landing-btn-hover);
+  border-color: var(--primary-btn-hover);
+  background-color: var(--primary-btn-hover);
 }
 
 .default {
@@ -62,4 +74,15 @@ a {
 
 .default:hover {
   background-color: rgb(213, 223, 232);
+}
+
+.footnote {
+  position: absolute;
+  font-size: 0.6rem;
+  right: 1.8rem;
+  bottom: 1.8rem;
+}
+
+.link {
+  font-weight: 600;
 }
