@@ -201,6 +201,10 @@ img {
   .flashcard-alert {
     font-size: 0.8rem;
   }
+
+  .footnote {
+    bottom: 4.5rem;
+  }
 }
 
 /* 560px */
