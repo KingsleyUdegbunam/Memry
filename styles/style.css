@@ -3,9 +3,7 @@ body {
 }
 
 main {
-  position: relative;
   background-color: var(--BG-CLR);
-  position: relative;
   height: 98vh;
   width: 100%;
   display: grid;
@@ -200,10 +198,6 @@ img {
 
   .flashcard-alert {
     font-size: 0.8rem;
-  }
-
-  .footnote {
-    bottom: 4.5rem;
   }
 }
 
