@@ -14,7 +14,7 @@ function renderHTML() {
 
         <article class="btns">
           <div class="add-another create-btn default">Add another</div>
-          <a class='' href='index.html'>
+          <a class='' href='field.html'>
           <div class="btn-text button create-btn">Continue</div>
           </a>
         </article>
