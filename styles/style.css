@@ -6,7 +6,7 @@ main {
   position: relative;
   background-color: var(--BG-CLR);
   position: relative;
-  height: 100vh;
+  height: 98vh;
   width: 100%;
   display: grid;
   place-content: center;
