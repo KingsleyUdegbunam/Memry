@@ -26,7 +26,6 @@ clickSound.src = "assets/sounds/click.mp3";
 flipSound.src = "assets/sounds/flipcard.mp3";
 
 let param = progressIndicatorElem.dataset.percent;
-console.log(param);
 
 const arrayLength = CurrentData.length;
 const maxIndex = CurrentData.length - 1;
@@ -37,7 +36,6 @@ let cardIndex = 0;
 let flipping = 0;
 
 let currentCard = CurrentData[cardIndex].id;
-console.log(currentCard);
 
 totalCardsElem.textContent = arrayLength;
 
@@ -53,7 +51,6 @@ function updateProgressBar() {
   const progress = (CurrentData[cardIndex].id / arrayLength) * 100;
   progressIndicatorElem.style.width = `${progress}%`;
   progressIndicatorElem.dataset.percent = `${Math.round(progress)}%`;
-  console.log(progress, arrayLength, cardIndex);
 }
 
 flipElem.addEventListener("click", () => {

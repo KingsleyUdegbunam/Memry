@@ -86,3 +86,10 @@ a {
 .link {
   font-weight: 600;
 }
+
+@media screen and (max-width: 41rem) {
+  .footnote {
+    right: 2rem;
+    bottom: 3rem;
+  }
+}

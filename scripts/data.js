@@ -45,5 +45,3 @@ export const defaultData = [
     answer: "Handling events from a parent element.",
   },
 ];
-
-console.log(typeof data);
