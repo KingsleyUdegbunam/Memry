@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flash Cards</title>
+
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+  <main>
+    <a href="set.html" class="logo">
+      Memry
+    </a>
+    <article class="minmax-alert display-alert">
+    </article>
+    <section class="main-wrapper">
+      <section class="progress-bar">
+        <div class="progress-indicator" data-percent=""></div>
+        <div class="count">
+          <span class="current-card">5</span> of <span class="total-cards">20</span>
+        </div>
+      </section>
+
+      <section class="cards">
+        <article class="card">
+          <div class="card-text">
+
+          </div>
+        </article>
+        <nav>
+          <div class="navigation previous-nav" data-movement="backward">
+            <div class="left-icon icon">
+              <svg class="svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+
+            </div>
+            <p class="nav-btn desktop">
+              Previous
+            </p>
+          </div>
+
+          <p class="reveal">
+            Show Answer
+          </p>
+
+          <div class="navigation next-nav" data-movement="forward">
+            <p class="nav-btn desktop">
+              Next
+            </p>
+            <div class="right-icon icon">
+              <svg class="svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+
+        </nav>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footnote">
+    Built by <a class="link" target="_blank" href="https://www.linkedin.com/in/kingsley-udegbunam/">Kay.</a>
+  </footer>
+
+  <script type="module" src="scripts/script.js"></script>
+</body>
+
+</html>
