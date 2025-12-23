@@ -25,8 +25,6 @@ maxSound.src = "assets/sounds/max-alert.mp3";
 clickSound.src = "assets/sounds/click.mp3";
 flipSound.src = "assets/sounds/flipcard.mp3";
 
-let param = progressIndicatorElem.dataset.percent;
-
 const arrayLength = CurrentData.length;
 const maxIndex = CurrentData.length - 1;
 
@@ -53,7 +51,7 @@ function updateProgressBar() {
   progressIndicatorElem.dataset.percent = `${Math.round(progress)}%`;
 }
 
-flipElem.addEventListener("click", () => {
+function flipCard() {
   if (!flipping) {
     renderDisplay("a");
     flipping = 1;
@@ -65,28 +63,73 @@ flipElem.addEventListener("click", () => {
     flipping = 0;
     flipElem.innerHTML = "Show Answer";
   }
+}
+
+flipElem.addEventListener("click", () => {
+  flipCard();
 });
 
-nextElem.addEventListener("click", () => {
-  if (cardIndex < maxIndex) {
+function navigateCard(move) {
+  if (move === "previous") {
     progressCountElem.classList.remove("completed");
 
-    cardIndex += 1;
-    renderDisplay("q");
-    updateCard();
-    updateProgressBar();
+    if (cardIndex - 1 < 0) {
+      alertElem.innerHTML = `
+      <article class="min-card-alert flashcard-alert">
+        <p>
+          <span class='off-mobile'>Can't go any lower</span><span class='on-mobile'>Endpoint</span> buddy!
+        </p>
 
-    flipping = 0;
-    flipElem.innerHTML = "Show Answer";
+        <svg class="minmax-icon warning-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+          <defs>
+            <style>
+              .cls-2 {
+                fill: #039be5
+              }
+            </style>
+          </defs>
+          <g id="warning">
+            <path d="m30.89 29.55-14-28a1 1 0 0 0-1.78 0l-14 28A1 1 0 0 0 2 31h28a1 1 0 0 0 .89-1.45z"
+              style="fill:#ffe082" />
+            <path class="cls-2" d="M16 23a1 1 0 0 1-1-1v-9a1 1 0 0 1 2 0v9a1 1 0 0 1-1 1z" />
+            <circle class="cls-2" cx="16" cy="26" r="1" />
+          </g>
+        </svg>
+      </article>
+    `;
+      minSound.play();
+      alertElem.classList.add("display-alert");
+    } else {
+      cardIndex -= 1;
+      renderDisplay("q");
+      updateCard();
+      updateProgressBar();
 
-    clickSound.play();
+      alertElem.classList.remove("display-alert");
+      clickSound.play();
+      flipping = 0;
+      flipElem.innerHTML = "Show Answer";
+    }
+  } else if (move === "next") {
+    if (cardIndex < maxIndex) {
+      progressCountElem.classList.remove("completed");
 
-    alertElem.classList.remove("display-alert");
-  }
-  if (cardIndex === maxIndex) {
-    progressCountElem.classList.add("completed");
+      cardIndex += 1;
+      renderDisplay("q");
+      updateCard();
+      updateProgressBar();
 
-    alertElem.innerHTML = `
+      flipping = 0;
+      flipElem.innerHTML = "Show Answer";
+
+      clickSound.play();
+
+      alertElem.classList.remove("display-alert");
+    }
+    if (cardIndex === maxIndex) {
+      progressCountElem.classList.add("completed");
+
+      alertElem.innerHTML = `
     <article class="max-card-alert flashcard-alert">
         <p>
           <span class='off-mobile'>You've reached the end.</span> Well done<span class='on-mobile'> buddy</span>!
@@ -169,50 +212,30 @@ nextElem.addEventListener("click", () => {
       </article>
     `;
 
-    maxSound.play();
-    alertElem.classList.add("display-alert");
+      maxSound.play();
+      alertElem.classList.add("display-alert");
+    }
   }
+}
+
+nextElem.addEventListener("click", () => {
+  navigateCard("next");
 });
 
 previousElem.addEventListener("click", () => {
-  progressCountElem.classList.remove("completed");
+  navigateCard("previous");
+});
 
-  if (cardIndex - 1 < 0) {
-    alertElem.innerHTML = `
-      <article class="min-card-alert flashcard-alert">
-        <p>
-          <span class='off-mobile'>Can't go any lower</span><span class='on-mobile'>Endpoint</span> buddy!
-        </p>
-
-        <svg class="minmax-icon warning-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-          <defs>
-            <style>
-              .cls-2 {
-                fill: #039be5
-              }
-            </style>
-          </defs>
-          <g id="warning">
-            <path d="m30.89 29.55-14-28a1 1 0 0 0-1.78 0l-14 28A1 1 0 0 0 2 31h28a1 1 0 0 0 .89-1.45z"
-              style="fill:#ffe082" />
-            <path class="cls-2" d="M16 23a1 1 0 0 1-1-1v-9a1 1 0 0 1 2 0v9a1 1 0 0 1-1 1z" />
-            <circle class="cls-2" cx="16" cy="26" r="1" />
-          </g>
-        </svg>
-      </article>
-    `;
-    minSound.play();
-    alertElem.classList.add("display-alert");
-  } else {
-    cardIndex -= 1;
-    renderDisplay("q");
-    updateCard();
-    updateProgressBar();
-
-    alertElem.classList.remove("display-alert");
-    clickSound.play();
-    flipping = 0;
-    flipElem.innerHTML = "Show Answer";
+/* KEYBOARD SHORTCUTS */
+document.addEventListener("keyup", (e) => {
+  if (e.code === "ArrowRight") {
+    navigateCard("next");
+  } else if (e.code === "ArrowLeft") {
+    navigateCard("previous");
+  } else if (e.code === "Space") {
+    flipCard();
+  } else if (e.key === "Escape") {
+    document.querySelector(".logo").click();
   }
 });
 
