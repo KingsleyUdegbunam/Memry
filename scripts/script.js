@@ -61,7 +61,7 @@ function flipCard() {
   } else {
     renderDisplay("q");
     flipping = 0;
-    flipElem.innerHTML = "Show Answer";
+    flipElem.innerHTML = "Answer";
   }
 }
 

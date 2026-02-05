@@ -6,10 +6,6 @@
   padding: 0.6rem 1.8rem;
 }
 
-.landing-wrapper {
-  gap: 1rem;
-}
-
 .reset {
   border-color: var(--reset-base-color);
   background-color: var(--reset-base-color);

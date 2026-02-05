@@ -50,8 +50,7 @@ main {
 }
 
 .main-wrapper {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 0.5rem;
   padding: 5rem;
 
@@ -140,14 +139,15 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding-inline: 0.5rem;
-  padding-block: 0.2rem;
 }
 
 .navigation {
-  display: flex;
-  align-items: center;
+  display: grid;
+  place-content: center;
   gap: 0.2rem;
+  padding-block: 0.2rem;
   color: #7a7a7a;
+  font-size: 0.7rem;
 }
 
 img {
@@ -163,13 +163,10 @@ img {
 .right-icon {
   transform: rotate(180deg);
 }
+
 .reveal {
   font-size: 0.8rem;
   font-weight: 600;
-}
-
-.navigation {
-  font-size: 0.7rem;
 }
 
 .navigation,
@@ -279,13 +276,36 @@ img {
 
 /* 352px */
 @media screen and (max-width: 22rem) {
+  .main-wrapper {
+    padding-inline: 1.9rem;
+  }
+
   .card-text {
     padding-inline: 0.8rem;
   }
 
   .card {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
   }
+
+  .reveal {
+    font-size: 0.65rem;
+    padding-block: 0.4rem;
+  }
+
+  .navigation,
+  .icon {
+    display: grid;
+    place-content: center;
+  }
+
+  .navigation {
+    padding: 0.2rem;
+  }
+
+  /* nav {
+    padding-block: 0.4rem;
+  } */
 }
 
 @media screen and (max-width: 318px) {
