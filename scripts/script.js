@@ -108,7 +108,7 @@ function navigateCard(move) {
       alertElem.classList.remove("display-alert");
       clickSound.play();
       flipping = 0;
-      flipElem.innerHTML = "Show Answer";
+      flipElem.innerHTML = "Answer";
     }
   } else if (move === "next") {
     if (cardIndex < maxIndex) {
@@ -120,7 +120,7 @@ function navigateCard(move) {
       updateProgressBar();
 
       flipping = 0;
-      flipElem.innerHTML = "Show Answer";
+      flipElem.innerHTML = "Answer";
 
       clickSound.play();
 

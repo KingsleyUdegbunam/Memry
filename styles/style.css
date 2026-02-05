@@ -142,12 +142,32 @@ nav {
 }
 
 .navigation {
-  display: grid;
-  place-content: center;
-  gap: 0.2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   padding-block: 0.2rem;
   color: #7a7a7a;
   font-size: 0.7rem;
+}
+
+@supports (gap: 0.2rem) {
+  .navigation {
+    gap: 0.2rem;
+  }
+
+  .navigation > * {
+    margin: 0;
+  }
+}
+
+@supports not (gap: 0.2rem) {
+  .navigation > * {
+    margin-right: 0.2rem;
+  }
+
+  .navigation > *:last-child {
+    margin-right: 0;
+  }
 }
 
 img {
@@ -293,19 +313,9 @@ img {
     padding-block: 0.4rem;
   }
 
-  .navigation,
-  .icon {
-    display: grid;
-    place-content: center;
-  }
-
   .navigation {
-    padding: 0.2rem;
+    padding: 0.5rem;
   }
-
-  /* nav {
-    padding-block: 0.4rem;
-  } */
 }
 
 @media screen and (max-width: 318px) {

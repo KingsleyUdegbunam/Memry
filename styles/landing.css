@@ -10,26 +10,6 @@ body {
   gap: 1rem;
 }
 
-/* @supports (gap: 1rem) {
-  .landing-wrapper {
-    gap: 1rem;
-  }
-
-  .landing-wrapper > * {
-    margin: 0;
-  }
-}
-
-@supports not (gap: 1rem) {
-  .landing-wrapper > * {
-    margin-bottom: 1rem;
-  }
-
-  .landing-wrapper > *:last-child {
-    margin-bottom: 0;
-  }
-} */
-
 .brand {
   display: flex;
   flex-direction: column;
@@ -49,4 +29,5 @@ body {
 
 .button {
   padding-block: 0.85rem;
+  justify-self: center;
 }
