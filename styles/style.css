@@ -138,7 +138,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 0.5rem;
 }
 
 .navigation {
@@ -185,6 +184,7 @@ img {
 }
 
 .reveal {
+  padding-inline: 1rem;
   font-size: 0.8rem;
   font-weight: 600;
 }
@@ -192,6 +192,8 @@ img {
 .navigation,
 .reveal {
   cursor: pointer;
+  padding-inline: 1rem;
+  padding-block: 0.2rem;
 }
 
 .navigation:hover {
@@ -252,10 +254,6 @@ img {
     display: none;
   }
 
-  nav {
-    padding-inline: 1rem;
-  }
-
   .icon {
     height: 1.1rem;
   }
@@ -310,11 +308,6 @@ img {
 
   .reveal {
     font-size: 0.65rem;
-    padding-block: 0.4rem;
-  }
-
-  .navigation {
-    padding: 0.5rem;
   }
 }
 
